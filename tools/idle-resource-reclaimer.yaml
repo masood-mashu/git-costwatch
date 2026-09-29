@@ -1,14 +1,18 @@
-name: "idle-resource-reclaimer"
+name: idle-resource-reclaimer
+version: 1.0.0
 description: "Audits compute and storage for zero-utilization thresholds across multi-cloud accounts"
-version: "0.1.0"
-runtime:
-  language: "python"
-  entrypoint: "idle_resource_reclaimer.py"
-parameters:
-  type: "object"
+input_schema:
+  type: object
   properties:
     resource_inventory_json:
-      type: "string"
+      type: string
       description: "JSON list of resources with idle_days and type"
   required:
-    - "resource_inventory_json"
+    - resource_inventory_json
+implementation:
+  type: script
+  path: idle_resource_reclaimer.py
+  runtime: python3
+annotations:
+  read_only: true
+  idempotent: true

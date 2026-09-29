@@ -1,16 +1,30 @@
 spec_version: "0.1.0"
-name: "git-costwatch"
-version: "0.1.0"
+name: git-costwatch
+version: 1.0.0
 description: "Autonomous Cloud FinOps, Spend Anomaly & Idle Infrastructure Reclaiming Guardian"
-framework: "opengap"
-authors:
-  - name: "masood-mashu"
-    email: "masoodmashu03@gmail.com"
+author: "masood-mashu"
 license: "Apache-2.0"
 
+model:
+  preferred: "openai:gpt-4o"
+  fallback:
+    - "anthropic:claude-3-5-sonnet"
+    - "openai:gpt-4o-mini"
+  constraints:
+    temperature: 0.1
+    max_tokens: 4096
+
+skills:
+  - cloud-finops-framework
+  - committed-use-planning
+
+tools:
+  - spend-anomaly-detector
+  - idle-resource-reclaimer
+  - reservation-coverage-scorer
+
 runtime:
-  language: "python"
-  version: ">=3.10"
+  max_turns: 50
   timeout: 120
 
 tags:

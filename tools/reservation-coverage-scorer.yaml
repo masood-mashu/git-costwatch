@@ -1,14 +1,18 @@
-name: "reservation-coverage-scorer"
+name: reservation-coverage-scorer
+version: 1.0.0
 description: "Calculates percentage of eligible compute instances covered by RIs or Savings Plans"
-version: "0.1.0"
-runtime:
-  language: "python"
-  entrypoint: "reservation_coverage_scorer.py"
-parameters:
-  type: "object"
+input_schema:
+  type: object
   properties:
     coverage_metrics_json:
-      type: "string"
+      type: string
       description: "JSON with covered_hours and total_hours"
   required:
-    - "coverage_metrics_json"
+    - coverage_metrics_json
+implementation:
+  type: script
+  path: reservation_coverage_scorer.py
+  runtime: python3
+annotations:
+  read_only: true
+  idempotent: true
