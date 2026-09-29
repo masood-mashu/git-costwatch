@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "detect_spend_anomalies",
+  "description": "Computes daily spend z-score relative to rolling historical baseline",
+  "type": "object",
+  "properties": {
+    "spend_data_json": {
+      "type": "string",
+      "description": "JSON with current day spend and baseline average"
+    }
+  },
+  "required": [
+    "spend_data_json"
+  ]
+}

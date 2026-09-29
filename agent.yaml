@@ -1,0 +1,25 @@
+spec_version: "0.1.0"
+name: "git-costwatch"
+version: "0.1.0"
+description: "Autonomous Cloud FinOps, Spend Anomaly & Idle Infrastructure Reclaiming Guardian"
+framework: "opengap"
+authors:
+  - name: "masood-mashu"
+    email: "masoodmashu03@gmail.com"
+license: "Apache-2.0"
+
+runtime:
+  language: "python"
+  version: ">=3.10"
+  timeout: 120
+
+tags:
+  - developer-tools
+  - finops
+  - cloud-cost
+  - spend-anomalies
+  - passport-challenge
+
+metadata:
+  passport_id: "aps-costwatch-01"
+  passport_category: "Developer tools"

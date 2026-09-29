@@ -1,0 +1,14 @@
+name: "spend-anomaly-detector"
+description: "Computes daily spend z-score relative to rolling historical baseline"
+version: "0.1.0"
+runtime:
+  language: "python"
+  entrypoint: "spend_anomaly_detector.py"
+parameters:
+  type: "object"
+  properties:
+    spend_data_json:
+      type: "string"
+      description: "JSON with current day spend and baseline average"
+  required:
+    - "spend_data_json"

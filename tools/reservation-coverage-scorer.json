@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "score_reservation_coverage",
+  "description": "Calculates percentage of eligible compute instances covered by RIs or Savings Plans",
+  "type": "object",
+  "properties": {
+    "coverage_metrics_json": {
+      "type": "string",
+      "description": "JSON with covered_hours and total_hours"
+    }
+  },
+  "required": [
+    "coverage_metrics_json"
+  ]
+}
